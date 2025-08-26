@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My One-Page Site</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #0078D7;
+      color: white;
+      padding: 2rem;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .header-text {
+      max-width: 500px;
+    }
+
+    header img {
+      flex-shrink: 0;
+      width: 390px;
+      height: 390px;
+      border-radius: 8px;
+      background: white;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+#visitor-ip {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  font-size: 0.9rem; /* Smaller font */
+  color: #333;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <img src="logo.jpg" alt="Logo Image" />
+      <div class="header-text">
+        <h1>NorthEast Tarrant Coin Club</h1>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#meetings">Meetings</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to the official web site of the NorthEast Tarrant Coin Club.  17 years ago, this club was started by Merle Owens and Russell Prinzinger with the purpose of providing community-minded coin collectors a place to meet and share the hobby of coin collecting. The club has grown to over 100 members from all over North Texas.
+<br>
+<p>
+Please join us every 2nd Thursday of the month at 7PM at Martin United Methodist Church, 2621 Bedford Rd, Bedford, TX 76021.</p>
+  </section>
+
+  <section id="meetings">
+    <h2>Meeting Schedule - Every 2nd Thursday of the Month, 7PM</h2>
+    <h2>Meeting Location - Martin United Methodist Church, 2621 Bedford Rd, Bedford, TX 76021 </h2>
+    <h2>Meeting Activities:</h2>
+    <ul>
+      <li>Fellowship</li>
+      <li>Auctions</li>
+      <li>Raffles and Door Prizes</li>
+      <li>Educational Presentations</li>
+      <li>Opportunities to Learn and Serve</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Northeast Tarrant Coin Club. All rights reserved.</p>
+  </footer>
+<section id="visitor-ip">
+  <h2>Your IP Address</h2>
+  <p id="ip-display">Loading...</p>
+</section>
+
+<script>
+  fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('ip-display').textContent = data.ip;
+    })
+    .catch(() => {
+      document.getElementById('ip-display').textContent = 'Unable to retrieve IP address.';
+    });
+</script>
+
+
+</body>
+</html>
